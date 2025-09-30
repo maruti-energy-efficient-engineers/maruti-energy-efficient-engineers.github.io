@@ -26,11 +26,16 @@ body {
   background: rgba(0, 0, 0, 0.55);
   padding: 20px;
   border-radius: 10px;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
 }
 
 .btn {
@@ -50,8 +55,8 @@ body {
 
 /* Sections */
 section {
-  padding: 50px 20px;
-  max-width: 1100px;
+  padding: 60px 20px;
+  max-width: 1200px;
   margin: auto;
 }
 
@@ -71,8 +76,9 @@ section {
   background: #f8f9fa;
   padding: 20px;
   border-radius: 15px;
-  flex: 1 1 250px;
+  flex: 1 1 300px;
   transition: transform 0.3s ease;
+  min-width: 250px;
 }
 
 .card:hover {
@@ -92,6 +98,7 @@ section {
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
 .consultation button {
@@ -101,11 +108,20 @@ section {
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .consultation button:hover {
   background: #023e8a;
 }
+
+/* Status Messages */
+.status {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+.status.success { color: green; }
+.status.error { color: red; }
 
 /* Footer */
 footer {
@@ -114,14 +130,71 @@ footer {
   text-align: center;
   padding: 20px;
   margin-top: 30px;
+  font-size: 0.9rem;
 }
 
-/* Responsive */
-@media(max-width: 768px) {
+/* ============================= */
+/* 📱 Responsive Breakpoints */
+/* ============================= */
+
+/* Large tablets / smaller laptops */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Large Phones */
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    padding: 0 10px;
+  }
   .hero h1 {
     font-size: 1.8rem;
   }
   .cards {
     flex-direction: column;
+    align-items: center;
   }
+}
+
+/* Small Phones */
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  section {
+    padding: 40px 15px;
+  }
+}
+/* Status Messages */
+.status {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.status.success {
+  color: green;
+}
+
+.status.error {
+  color: red;
 }
