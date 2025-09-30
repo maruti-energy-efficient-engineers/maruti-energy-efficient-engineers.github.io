@@ -10,21 +10,19 @@ body {
   line-height: 1.6;
   color: #222; /* Keep dark text for sections */
   background-color: #fff;
-  padding-top: 5rem; /* NEW: Added padding to push all content down from the fixed navbar */
 }
 
 /* New: Navigation Bar */
 .navbar {
-  position: fixed; /* NEW: Changed from 'absolute' to 'fixed' to make it not movable */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   padding: 1.5rem 10%;
-  z-index: 1000; /* NEW: Increased z-index to ensure it stays on top */
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.7); /* NEW: Added translucent background */
 }
 .navbar .logo {
   font-size: 1.5rem;
@@ -46,7 +44,7 @@ body {
 /* Hero Section */
 .hero {
   position: relative;
-  height: calc(100vh - 5rem); /* MODIFIED: Adjusted height to fill the screen below the 5rem body padding */
+  height: 100vh;
   /* Retain original background image and make it full impact */
   background: url('hero.jpg') center/cover no-repeat;
   display: flex;
@@ -149,28 +147,6 @@ footer p {
     margin: 0.5rem 0;
 }
 
-/* NEW: Footer content and social link styles */
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.social-links {
-    margin-top: 1rem;
-}
-
-.social-links a {
-    color: #fff;
-    font-size: 1.5rem; /* Adjust icon size */
-    margin: 0 0.75rem; /* Spacing between icons */
-    transition: color 0.3s ease;
-    text-decoration: none; /* Ensure no underline */
-}
-
-.social-links a:hover {
-    color: #0077b5; /* LinkedIn blue on hover for example */
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .cards {
@@ -196,12 +172,5 @@ footer p {
   }
   .navbar-links a {
       margin-left: 1rem;
-  }
-  footer {
-    padding: 1.5rem 5%;
-  }
-  .social-links a {
-    font-size: 1.3rem;
-    margin: 0 0.5rem;
   }
 }
