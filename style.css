@@ -147,6 +147,28 @@ footer p {
     margin: 0.5rem 0;
 }
 
+/* NEW: Footer content and social link styles */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem; /* Adjust icon size */
+    margin: 0 0.75rem; /* Spacing between icons */
+    transition: color 0.3s ease;
+    text-decoration: none; /* Ensure no underline */
+}
+
+.social-links a:hover {
+    color: #0077b5; /* LinkedIn blue on hover for example */
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .cards {
@@ -172,5 +194,12 @@ footer p {
   }
   .navbar-links a {
       margin-left: 1rem;
+  }
+  footer {
+    padding: 1.5rem 5%;
+  }
+  .social-links a {
+    font-size: 1.3rem;
+    margin: 0 0.5rem;
   }
 }
