@@ -14,6 +14,7 @@
     <div class="navbar-links" id="navLinks">
       <a href="#about">About Us</a>
       <a href="#services">Solutions</a>
+      <a href="#press">Press</a>
       <a href="#consultation">Contact</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
@@ -119,6 +120,30 @@
     </p>
   </section>
 
+  <section id="press" class="press">
+    <h2>Featured In</h2>
+    <p class="press-intro">
+      Yogender Gaur's work on oxygen-conscious cooling has been covered in the press.
+      Tap a page to read it up close, or open the full feature below.
+    </p>
+    <div class="press-gallery">
+      <button class="press-thumb" data-full="mag_1.jpeg" aria-label="Open magazine feature, page 1">
+        <img src="mag_1.jpeg" alt="Magazine feature on Yogender Gaur and Maruti Energy Efficient Engineers, page 1">
+      </button>
+      <button class="press-thumb" data-full="mag_2.jpeg" aria-label="Open magazine feature, page 2">
+        <img src="mag_2.jpeg" alt="Magazine feature on Yogender Gaur and Maruti Energy Efficient Engineers, page 2">
+      </button>
+      <button class="press-thumb" data-full="mag_3.jpeg" aria-label="Open magazine feature, page 3">
+        <img src="mag_3.jpeg" alt="Magazine feature on Yogender Gaur and Maruti Energy Efficient Engineers, page 3">
+      </button>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Magazine feature, full page">
+  </div>
+
   <section id="consultation" class="consultation">
     <h2>Book a Free Consultation Now</h2>
     <h5 style="text-align:center;">or contact +91-9414100796 for more information!</h5>
@@ -128,7 +153,7 @@
       <textarea name="message" placeholder="Tell us about your project requirement" required></textarea>
       <button type="submit" class="btn">Submit Request</button>
     </form>
-    <div id="formMessage" class="form-message"></div>
+    <div id="formStatus" class="status"></div>
   </section>
 
   <footer>
