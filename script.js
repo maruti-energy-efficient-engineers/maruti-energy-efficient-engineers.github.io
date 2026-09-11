@@ -26,7 +26,7 @@ form.addEventListener("submit", async (e) => {
   }
 });
 
-// NEW: Hamburger Menu Logic
+// Hamburger Menu Logic
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
 
@@ -41,5 +41,52 @@ if (hamburger && navLinks) {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
+  });
+}
+
+// NEW: Magazine feature lightbox
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightboxImg");
+const lightboxClose = document.getElementById("lightboxClose");
+const pressThumbs = document.querySelectorAll(".press-thumb");
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt;
+  lightbox.classList.add("active");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden"; // prevent background scroll
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  lightbox.setAttribute("aria-hidden", "true");
+  lightboxImg.src = "";
+  document.body.style.overflow = "";
+}
+
+if (lightbox && lightboxImg && lightboxClose && pressThumbs.length) {
+  pressThumbs.forEach((thumb) => {
+    thumb.addEventListener("click", () => {
+      const fullSrc = thumb.getAttribute("data-full");
+      const altText = thumb.querySelector("img")?.alt || "Magazine feature";
+      openLightbox(fullSrc, altText);
+    });
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  // Close when clicking the dark background (not the image itself)
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      closeLightbox();
+    }
   });
 }
